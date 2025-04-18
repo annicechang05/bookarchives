@@ -1,0 +1,382 @@
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    min-height: 100vh;         
+  }
+
+p, h2, h3, li {
+    font-family: "Reddit Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Shrikhand", serif;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.intro h1, h2 {
+    padding-right: 50px;
+}
+
+.intro h1 {
+    grid-column: 3;
+    font-size: 2.75rem;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+.intro h2 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-align: right;
+    grid-column: 2;
+    grid-column: 2/ span 2;
+    margin-top: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-right: 0px;
+    padding-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+}
+
+nav li {
+    font-size: 1.2rem;
+    margin-right: 20px;
+    font-family: "Shrikhand", serif;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-bottom: 3px solid black;
+}
+
+nav ul li a.active {
+    border-bottom: 3px solid black;
+}
+
+nav ul li a:visited {
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1.5rem;
+    align-items: start;
+    grid-auto-flow: dense;
+    padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    row-gap: 80px;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  
+  .card-container.span-2 {
+    grid-column: span 2;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    padding: 15px;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  .image-card {
+    z-index: 2;
+    pointer-events: auto;
+  }
+  
+  .image-card img {
+    border-radius: 0.75rem;
+    width: 200px;
+  }
+
+  .text-card {
+    position: absolute;
+    padding: 1rem; 
+    border-radius: 1rem;
+    background-color: white;
+}
+  
+  .text-card h1 {
+    font-size: 1.25rem;
+    font-family: "Shrikhand", serif;
+  }
+  
+  .text-card h2 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .beachRead {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .JustForTheSummer {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .Nightingale {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+
+  .DaisyJones {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .DanceOfThieves {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+
+  .happyplace {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+
+  .emberinash {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  .beartown {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .summerromance {
+    grid-column: 3 / 4;
+    grid-row: 3;
+  }
+
+  .bloodtraitor {
+    grid-column: 4 / 5;
+    grid-row: 3;
+  }
+
+  .TheFavorites {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .RememberMe {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+
+  .span-2 {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .card-inner {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    position: relative;
+  }
+  
+  .card-inner .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 1rem;
+  }
+  
+  .card-inner .text-card {
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+  }
+  
+  .card-inner.flipped .image-card {
+    transform: rotateY(180deg);
+  }
+  
+  .card-inner.flipped .text-card {
+    transform: rotateY(0deg);
+  }
+
+  .card-container.span-2 {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 2 / 3;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  
+  .card-container.span-2 .card {
+    position: absolute;
+    border-radius: 1rem;
+    transition: transform 0.6s ease, z-index 0.6s ease;
+    backface-visibility: hidden;
+    overflow: hidden;
+  }
+  
+  .card-container.span-2 .image-card img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  
+  .card-container.span-2 .image-card {
+    transition: transform 0.6s ease, z-index 0.6s ease;
+    z-index: 1;
+  }
+
+  /* Initial state: text card hidden */
+  .card-container.span-2 .text-card {
+    background-color: white;
+    padding: 1rem;
+    transform: translateX(-100%) rotateY(-5deg);
+    z-index: 0;
+    opacity: 0;
+  }
+  
+  /* Step 1: text card peeking out at an angle */
+  .card-container.span-2.step-1 .text-card {
+    transform: translateX(100px) rotate(20deg);
+    z-index: 0;
+    opacity: 1;
+  }
+  
+  /* Step 2: text card fully on top */
+  .card-container.span-2.step-2 .text-card {
+    transform: translateX(7%) translateY(6%) rotateY(0deg);
+    z-index: 2;
+    opacity: 1;
+  }
+  
+  /* Step 2: image is partially underneath */
+  .card-container.span-2.step-2 .image-card {
+    z-index: 1;
+    transform: translateX(-10px) scale(0.98);
+  }
+  
+  /* Back to initial state */
+  .card-container.span-2.step-0 .text-card {
+    z-index: 0;
+    transform: translateX(0px) scale(1);
+  }
+
+  .card-container.span-2 .card,
+    .card-container.span-2 .text-card,
+    .card-container.span-2 .image-card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-items: center; 
+    align-items: center; 
+    padding: 2rem;
+  }
+
+  .zoom-note {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #444;
+    font-size: 1rem;
+  }
+  
+  .polaroid-container {
+    display: inline-block;
+    margin: 20px;
+    transform: rotate(-2deg); 
+    transition: transform 0.3s ease, scale 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .polaroid-container:hover {
+    transform: scale(1.1) rotate(0deg);
+    z-index: 10;
+  }
+  
+  .polaroid {
+    width: 250px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    padding: 20px 15px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .polaroid::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #f8f8f8;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .quote {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .author {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+  }
